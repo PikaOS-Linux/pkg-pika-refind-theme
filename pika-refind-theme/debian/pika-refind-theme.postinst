@@ -1,23 +1,23 @@
 #! /bin/bash
 
 
-if [[ -z $EFI_PATH ]] && [[ -d /efi ]]
+if [[ -z $EFI_PATH ]] && [[ -f /efi/EFI/refind/refind.conf ]]
 then
     export EFI_PATH=/efi
 fi
 
 
-if [[ -z $EFI_PATH ]] && [[ -d /esp ]]
+if [[ -z $EFI_PATH ]] && [[ -f /esp/EFI/refind/refind.conf ]]
 then
     export EFI_PATH=/esp
 fi
 
-if [[ -z $EFI_PATH ]] && [[ -d /boot/efi ]]
+if [[ -z $EFI_PATH ]] && [[ -f /boot/efi/EFI/refind/refind.conf ]]
 then
     export EFI_PATH=/boot/efi
 fi
 
-if [[ -z $EFI_PATH ]] && [[ -d /boot ]]
+if [[ -z $EFI_PATH ]] && [[ -f /boot/EFI/refind/refind.conf ]]
 then
     export EFI_PATH=/boot
 fi
