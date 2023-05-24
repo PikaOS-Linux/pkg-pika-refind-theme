@@ -1,3 +1,9 @@
+pika-refind-theme (1.2-99pika1.lunar) lunar; urgency=medium
+
+  * Fix install again
+
+ -- ferreo <harderthanfire@gmail.com>  Wed, 18 Jan 2023 21:48:14 +0000
+
 pika-refind-theme (1.1-99pika1.lunar) lunar; urgency=medium
 
   * Fix install
