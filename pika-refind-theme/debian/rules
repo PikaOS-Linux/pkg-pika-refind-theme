@@ -7,11 +7,11 @@ export DH_VERBOSE = 1
 ## === Set paths env vars ===
 
 ## Source directory, called upon by $(srcdir)
-srcdir = $(shell debian/scripts/get_pwd.sh)
+#srcdir = $(shell debian/scripts/get_pwd.sh)
 ## The Root of package number one, called upon by $(pkgdir1)
-pkgdir1 = $(srcdir)/debian/pkgdir1
+#pkgdir1 = $(srcdir)/debian/pkgdir1
 ## The Root of package number two, you can add as many of these as you like
-pkgdir2 = $(srcdir)/debian/pkgdir2
+#pkgdir2 = $(srcdir)/debian/pkgdir2
 
 ## If building a singular package you can remove the number, and as you guessed you call upon it with $(pkgdir)
 # pkgdir = $(srcdir)/debian/pkgdir

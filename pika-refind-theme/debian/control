@@ -1,0 +1,12 @@
+Source: pika-refind-theme
+Section: admin
+Priority: optional
+Maintainer: name <email>
+Standards-Version: 4.6.1
+Build-Depends: debhelper-compat (= 13)
+Rules-Requires-Root: no
+
+Package: pika-refind-theme
+Architecture: all
+Depends: ${misc:Depends}, refind
+Description: Pika theme for refind

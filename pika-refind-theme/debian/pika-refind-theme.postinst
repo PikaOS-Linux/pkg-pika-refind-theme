@@ -1,0 +1,28 @@
+#! /bin/bash
+
+
+if [[ -z $EFI_PATH ]] && [[ -d /efi ]]
+then
+    export EFI_PATH=/efi
+fi
+
+
+if [[ -z $EFI_PATH ]] && [[ -d /esp ]]
+then
+    export EFI_PATH=/esp
+fi
+
+if [[ -z $EFI_PATH ]] && [[ -d /boot/efi ]]
+then
+    export EFI_PATH=/boot/efi
+fi
+
+if [[ -z $EFI_PATH ]] && [[ -d /boot ]]
+then
+    export EFI_PATH=/boot
+fi
+
+
+grep -qxF 'include refind-dark/refind-dark.conf' $EFI_PATH/EFI/refind/refind.conf || echo 'include refind-dark/refind-dark.conf' >> $EFI_PATH/EFI/refind/refind.conf
+
+cp -R /usr/share/pika-refind/theme/* $EFI_PATH/EFI/refind/*
