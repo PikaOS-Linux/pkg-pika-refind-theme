@@ -23,6 +23,5 @@ then
 fi
 
 
-grep -qxF 'include /usr/share/pika-refind/theme/refind-dark/refind-dark.conf' $EFI_PATH/EFI/refind/refind.conf || echo 'include /usr/share/pika-refind/theme/refind-dark/refind-dark.conf' >> $EFI_PATH/EFI/refind/refind.conf
-
+grep -qxF 'include refind-dark/refind-dark.conf' $EFI_PATH/EFI/refind/refind.conf || echo 'include refind-dark/refind-dark.conf' >> $EFI_PATH/EFI/refind/refind.conf
 cp -R /usr/share/pika-refind/theme/* $EFI_PATH/EFI/refind
