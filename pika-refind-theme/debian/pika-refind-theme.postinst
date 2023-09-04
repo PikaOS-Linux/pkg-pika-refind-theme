@@ -25,3 +25,26 @@ fi
 
 grep -qxF 'include refind-dark/refind-dark.conf' $EFI_PATH/EFI/refind/refind.conf || echo 'include refind-dark/refind-dark.conf' >> $EFI_PATH/EFI/refind/refind.conf
 cp -R /usr/share/pika-refind/theme/* $EFI_PATH/EFI/refind
+
+
+echo "changing up refind_linux.conf"
+if /boot/refind_linux.conf | grep amd_pstate
+then
+    ture
+else
+    sed -i "s#root=#amd_pstate=active root=#" /boot/refind_linux.conf
+fi
+
+if /boot/refind_linux.conf | grep nowatchdog
+then
+    ture
+else
+    sed -i "s#root=#nowatchdog root=#" /boot/refind_linux.conf
+fi
+
+if /boot/refind_linux.conf | grep amd_prefcore
+then
+    ture
+else
+    sed -i "s#root=#amd_prefcore=enable root=#" /boot/refind_linux.conf
+fi
