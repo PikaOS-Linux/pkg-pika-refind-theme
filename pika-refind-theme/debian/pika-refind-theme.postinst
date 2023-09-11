@@ -30,21 +30,21 @@ cp -R /usr/share/pika-refind/theme/* $EFI_PATH/EFI/refind
 echo "changing up refind_linux.conf"
 if cat /boot/refind_linux.conf | grep amd_pstate
 then
-    ture
+    true
 else
     sed -i "s#root=#amd_pstate=active root=#" /boot/refind_linux.conf
 fi
 
 if cat /boot/refind_linux.conf | grep nowatchdog
 then
-    ture
+    true
 else
     sed -i "s#root=#nowatchdog root=#" /boot/refind_linux.conf
 fi
 
 if cat /boot/refind_linux.conf | grep amd_prefcore
 then
-    ture
+    true
 else
     sed -i "s#root=#amd_prefcore=enable root=#" /boot/refind_linux.conf
 fi
